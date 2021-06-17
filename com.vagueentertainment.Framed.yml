@@ -20,7 +20,7 @@ modules:
             
     sources:
       - type: archive
-        url: https://github.com/VagueEntertainment/Framed/archive/refs/tags/v0.3.tar.gz
+        url: https://github.com/VagueEntertainment/Framed/archive/refs/tags/v0.3.1.tar.gz
         sha256: "1558912caf5d83347be02a598b59fa13e09ca758c1a35d18a4d407784292e667"
         
       - type: archive
