@@ -4,7 +4,6 @@ runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: framed
 modules: 
-  
   - name: framed
     buildsystem: simple
     build-commands:
@@ -75,3 +74,4 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=home:ro
   - --device=dri
+  - --allow=multiarch
