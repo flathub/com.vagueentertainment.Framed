@@ -37,7 +37,8 @@ modules:
           - export APPDATA="$XDG_DATA_HOME"
           - export HOME="$APPDATA"
           - export PATH=$PATH:/app/bin/HoneyComb-redistributable/service
-          - if `uname -m` == x86_64 then
+          - if [ `uname -m` = "x86_64" ]
+          - then
           - /app/bin/Framed.x86_64 --path=/app/bin/
           - else
           - /app/bin/Framed.rpi4 --path=/app/bin/
