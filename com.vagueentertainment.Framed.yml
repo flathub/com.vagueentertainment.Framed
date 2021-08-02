@@ -6,7 +6,7 @@ command: framed
 add-extensions:
   org.freedesktop.Platform.Compat.arm:
     directory: lib/arm-linux-gnu
-    version: '20.08'
+    version: '19.08'
 modules: 
   - name: framed
     buildsystem: simple
