@@ -26,12 +26,12 @@ modules:
             
     sources:
       - type: archive
-        url: https://github.com/VagueEntertainment/Framed/archive/refs/tags/v0.3.4.1.tar.gz
-        sha256: "68bc6a5ee4660bd521f29252de9aa763255cebabe8071e3a2c70d382a9ef02b5"
+        url: https://github.com/VagueEntertainment/Framed/archive/refs/tags/v0.3.5.tar.gz
+        sha256: "919054a8492f75566558dac7e4e0034294b65327dc1012134f1c82bc443348e6"
         
       - type: archive
-        url: https://github.com/VagueEntertainment/HoneyComb-redistributable/archive/refs/tags/0.1.2.1.tar.gz
-        sha256: "f49d06dee174f688f944f7d4b19bca0ec2e864718fa39b57584aacd51880f28d"
+        url: https://github.com/VagueEntertainment/HoneyComb-redistributable/archive/refs/tags/0.1.2.2.tar.gz
+        sha256: "b26048bf731d64d8793fc36a7806b8c679e3e15a46df300672814e84610cf0bf"
         dest: HoneyComb-redistributable
       
       - type: script
