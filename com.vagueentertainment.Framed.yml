@@ -14,8 +14,6 @@ modules:
       - install -D -m755 Framed.x86_64 /app/bin/Framed.x86_64
       - install -D -m755 Framed.rpi4 /app/bin/Framed.rpi4
       - install -D Framed.pck /app/bin/Framed.pck
-      - install -D Framed.rpi4.pck /app/bin/Framed.rpi4.pck
-      - install -D Framed.x86_64.pck /app/bin/Framed.x86_64.pck
       - cp -r HoneyComb-redistributable /app/bin/HoneyComb-redistributable
       - install -D -m755 framed.sh /app/bin/framed
       - desktop-file-edit --remove-key=PrefersNonDefaultGPU $FLATPAK_ID.desktop
