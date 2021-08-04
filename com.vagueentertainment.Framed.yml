@@ -24,8 +24,8 @@ modules:
             
     sources:
       - type: archive
-        url: https://github.com/VagueEntertainment/Framed/archive/refs/tags/v0.3.5.tar.gz
-        sha256: "919054a8492f75566558dac7e4e0034294b65327dc1012134f1c82bc443348e6"
+        url: https://github.com/VagueEntertainment/Framed/archive/refs/tags/v0.3.5.1.tar.gz
+        sha256: "9936a5a3d4332556e005de0f4d58b3ac95e42c9797730bafde4cca8fb50cf2e6"
         
       - type: archive
         url: https://github.com/VagueEntertainment/HoneyComb-redistributable/archive/refs/tags/0.1.2.2.tar.gz
