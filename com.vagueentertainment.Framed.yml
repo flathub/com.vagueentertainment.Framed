@@ -1,18 +1,16 @@
 app-id: com.vagueentertainment.Framed
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
 command: framed
-add-extensions:
-  org.freedesktop.Platform.Compat.arm:
-    directory: lib/arm-linux-gnu
-    version: '19.08'
-modules: 
+
+modules:
   - name: framed
     buildsystem: simple
     build-commands:
       - install -D -m755 Framed.x86_64 /app/bin/Framed.x86_64
-      - install -D -m755 Framed.rpi4 /app/bin/Framed.rpi4
       - install -D Framed.pck /app/bin/Framed.pck
       - cp -r HoneyComb-redistributable /app/bin/HoneyComb-redistributable
       - install -D -m755 framed.sh /app/bin/framed
@@ -21,54 +19,36 @@ modules:
       - install -Dm644 $FLATPAK_ID.desktop /app/share/applications/$FLATPAK_ID.desktop
       - install -Dm644 icon.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
       - install -Dm644 $FLATPAK_ID.appdata.xml /app/share/appdata/$FLATPAK_ID.appdata.xml
-            
+
     sources:
       - type: archive
         url: https://github.com/VagueEntertainment/Framed/archive/refs/tags/v0.3.5.2.tar.gz
         sha256: "db0832060780b8e4908bbf152b073f3d52cc2ba8cb355ec3e4e872991a65815d"
-        
+
       - type: archive
         url: https://github.com/VagueEntertainment/HoneyComb-redistributable/archive/refs/tags/0.1.2.2.tar.gz
         sha256: "b26048bf731d64d8793fc36a7806b8c679e3e15a46df300672814e84610cf0bf"
         dest: HoneyComb-redistributable
-      
+
       - type: script
         dest-filename: framed.sh
         commands:
           - export APPDATA="$XDG_DATA_HOME"
           - export HOME="$APPDATA"
           - export PATH=$PATH:/app/bin/HoneyComb-redistributable/service
-          - if [ `uname -m` = "x86_64" ]
-          - then
           - /app/bin/Framed.x86_64 --path=/app/bin/
-          - else
-          - /app/bin/Framed.rpi4 --path=/app/bin/
-          - fi
-          
+
       - type: file
         path: icon.svg
-        
+
       - type: file
         path: com.vagueentertainment.Framed.appdata.xml
-        
+
       - type: file
         path: com.vagueentertainment.Framed.desktop
-        
-  - modules/python3-setuptools_scm.json
-  - modules/python3-bottle.json
-  - modules/python3-requests.json
-  - modules/python3-netifaces.json
-  - modules/python3-pyopenssl.json
-  
-  # modified version of pycrypto 2.6.1 to work with the freedesktop.Platform runtime. A PR is open for submission to fix this issue with pycrypto. 
-  # Will remove when the official distibution of the package works properly.  
-  - modules/python3-pycrypto.json
-  
-  - modules/python3-steem.json
-  - modules/python3-hivepy.json
-  - modules/python3-websockets.json
-  - modules/python3-asyncio.json
-        
+
+  - python3-modules.json
+
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -76,4 +56,3 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=home:ro
   - --device=dri
-  - --allow=multiarch
