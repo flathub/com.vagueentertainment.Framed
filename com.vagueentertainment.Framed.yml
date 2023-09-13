@@ -3,16 +3,12 @@ runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: framed
-add-extensions:
-  org.freedesktop.Platform.Compat.arm:
-    directory: lib/arm-linux-gnu
-    version: '19.08'
+
 modules:
   - name: framed
     buildsystem: simple
     build-commands:
       - install -D -m755 Framed.x86_64 /app/bin/Framed.x86_64
-      - install -D -m755 Framed.rpi4 /app/bin/Framed.rpi4
       - install -D Framed.pck /app/bin/Framed.pck
       - cp -r HoneyComb-redistributable /app/bin/HoneyComb-redistributable
       - install -D -m755 framed.sh /app/bin/framed
@@ -38,12 +34,7 @@ modules:
           - export APPDATA="$XDG_DATA_HOME"
           - export HOME="$APPDATA"
           - export PATH=$PATH:/app/bin/HoneyComb-redistributable/service
-          - if [ `uname -m` = "x86_64" ]
-          - then
           - /app/bin/Framed.x86_64 --path=/app/bin/
-          - else
-          - /app/bin/Framed.rpi4 --path=/app/bin/
-          - fi
 
       - type: file
         path: icon.svg
@@ -76,4 +67,3 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=home:ro
   - --device=dri
-  - --allow=multiarch
