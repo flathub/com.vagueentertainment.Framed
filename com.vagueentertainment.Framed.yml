@@ -2,6 +2,8 @@ app-id: com.vagueentertainment.Framed
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
 command: framed
 
 modules:
@@ -45,20 +47,7 @@ modules:
       - type: file
         path: com.vagueentertainment.Framed.desktop
 
-  - modules/python3-setuptools_scm.json
-  - modules/python3-bottle.json
-  - modules/python3-requests.json
-  - modules/python3-netifaces.json
-  - modules/python3-pyopenssl.json
-
-  # modified version of pycrypto 2.6.1 to work with the freedesktop.Platform runtime. A PR is open for submission to fix this issue with pycrypto.
-  # Will remove when the official distibution of the package works properly.
-  - modules/python3-pycrypto.json
-
-  - modules/python3-steem.json
-  - modules/python3-hivepy.json
-  - modules/python3-websockets.json
-  - modules/python3-asyncio.json
+  - python3-modules.json
 
 finish-args:
   - --share=ipc
