@@ -12,11 +12,11 @@
   </description>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
-  <url type="homepage">https://vagueentertainment.com/Framed/</url>
+  <url type="homepage">https://github.com/flathub/com.vagueentertainment.Framed</url>
   <launchable type="desktop-id">com.vagueentertainment.Framed.desktop</launchable>
   <screenshots>
     <screenshot type="default">
-      <image type="source">http://vagueentertainment.com/images/SS1.png</image>
+      <image type="source">https://raw.githubusercontent.com/flathub/com.vagueentertainment.Framed/be818fc61ec26207c3ef8b23de08c976ab607cd4/screenshot.png</image>
       <caption>Setup and Frame</caption>
     </screenshot>
   </screenshots>
